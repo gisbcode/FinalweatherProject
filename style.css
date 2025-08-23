@@ -74,6 +74,7 @@ main {
 .weather-app-icon img {
   width: 80px;
   height: 80px;
+  display: block;
 }
 
 .current-temperature {
