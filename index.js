@@ -9,8 +9,6 @@ function displayTemperature(response) {
   let temperature = Math.round(response.data.temperature.current);
   let date = new Date(response.data.time * 1000);
   let iconElement = document.querySelector("#icon");
-  let iconUrl = response.data.condition.icon_url;
-  let iconDescription = response.data.condition.description;
 
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" alt="${response.data.condition.description}"/>`;
   cityElement.innerHTML = response.data.city;
@@ -54,7 +52,7 @@ function search(event) {
   let apiKey = "b2a5adcct04b33178913oc335f405433";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
-  axios.get(apiUrl).then(displayWeather);
+  axios.get(apiUrl).then(displayTemperature); // ✅ fixed
 }
 
 let searchForm = document.querySelector("#search-form");
