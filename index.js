@@ -57,8 +57,6 @@ function search(event) {
   axios.get(apiUrl).then(displayWeather);
 }
 
-
-
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
